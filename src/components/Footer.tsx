@@ -21,23 +21,37 @@ const Instagram = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-const COLUMNS: { title: string; links: string[] }[] = [
+type Link = { label: string; href: string };
+
+const PRIVACY_HREF = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/privacy`;
+
+const COLUMNS: { title: string; links: Link[] }[] = [
   {
     title: "Platform",
-    links: ["How It Works", "Services", "Safety", "Pricing"],
+    links: [
+      { label: "How It Works", href: "#how-it-works" },
+      { label: "Services", href: "#features" },
+      { label: "Safety", href: "#safety" },
+      { label: "Pricing", href: "#" },
+    ],
   },
   {
     title: "Join Us",
     links: [
-      "Become a Driver",
-      "Become an Artisan",
-      "Fleet Partners",
-      "Careers",
+      { label: "Become a Driver", href: "#earn" },
+      { label: "Become an Artisan", href: "#earn" },
+      { label: "Fleet Partners", href: "#" },
+      { label: "Careers", href: "#" },
     ],
   },
   {
     title: "Support",
-    links: ["Help Center", "Contact Us", "Privacy Policy", "Terms of Service"],
+    links: [
+      { label: "Help Center", href: "#" },
+      { label: "Contact Us", href: "#" },
+      { label: "Privacy Policy", href: PRIVACY_HREF },
+      { label: "Terms of Service", href: "#" },
+    ],
   },
 ];
 
@@ -88,12 +102,12 @@ export function Footer() {
                 </h4>
                 <ul className="mt-4 space-y-2.5">
                   {col.links.map((l) => (
-                    <li key={l}>
+                    <li key={l.label}>
                       <a
-                        href="#"
+                        href={l.href}
                         className="text-sm text-ink-700/75 transition-colors hover:text-ink-900"
                       >
-                        {l}
+                        {l.label}
                       </a>
                     </li>
                   ))}
