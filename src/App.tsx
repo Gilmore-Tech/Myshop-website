@@ -10,21 +10,25 @@ import { Waitlist } from "./components/Waitlist";
 import { Newsletter } from "./components/Newsletter";
 import { Footer } from "./components/Footer";
 import { PrivacyPolicy } from "./components/PrivacyPolicy";
+import { TermsOfService } from "./components/TermsOfService";
 
-function getRoute() {
+type Route = "home" | "privacy" | "terms";
+
+function getRoute(): Route {
   const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   const path = window.location.pathname.replace(base, "") || "/";
   if (path.startsWith("/privacy")) return "privacy";
+  if (path.startsWith("/terms")) return "terms";
   return "home";
 }
 
 function App() {
-  const [route, setRoute] = useState<"home" | "privacy">(() =>
-    typeof window === "undefined" ? "home" : (getRoute() as "home" | "privacy"),
+  const [route, setRoute] = useState<Route>(() =>
+    typeof window === "undefined" ? "home" : getRoute(),
   );
 
   useEffect(() => {
-    const onPop = () => setRoute(getRoute() as "home" | "privacy");
+    const onPop = () => setRoute(getRoute());
     window.addEventListener("popstate", onPop);
     return () => window.removeEventListener("popstate", onPop);
   }, []);
@@ -35,6 +39,10 @@ function App() {
       {route === "privacy" ? (
         <main>
           <PrivacyPolicy />
+        </main>
+      ) : route === "terms" ? (
+        <main>
+          <TermsOfService />
         </main>
       ) : (
         <main>
