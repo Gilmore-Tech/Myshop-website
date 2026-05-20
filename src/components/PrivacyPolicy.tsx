@@ -249,10 +249,10 @@ export function PrivacyPolicy() {
               <p className="mt-5">
                 To exercise rights, email{" "}
                 <a
-                  href="mailto:privacy@myshop.com.gh"
+                  href="mailto:privacy@gilmoretechnologiesgh.com"
                   className="font-semibold text-brand-700 hover:text-brand-800"
                 >
-                  privacy@myshop.com.gh
+                  privacy@gilmoretechnologiesgh.com
                 </a>{" "}
                 or visit any MyShop regional office. We'll respond within 30
                 days.

@@ -11,14 +11,16 @@ import { Newsletter } from "./components/Newsletter";
 import { Footer } from "./components/Footer";
 import { PrivacyPolicy } from "./components/PrivacyPolicy";
 import { TermsOfService } from "./components/TermsOfService";
+import { DeleteAccount } from "./components/DeleteAccount";
 
-type Route = "home" | "privacy" | "terms";
+type Route = "home" | "privacy" | "terms" | "delete-account";
 
 function getRoute(): Route {
   const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   const path = window.location.pathname.replace(base, "") || "/";
   if (path.startsWith("/privacy")) return "privacy";
   if (path.startsWith("/terms")) return "terms";
+  if (path.startsWith("/delete-account")) return "delete-account";
   return "home";
 }
 
@@ -43,6 +45,10 @@ function App() {
       ) : route === "terms" ? (
         <main>
           <TermsOfService />
+        </main>
+      ) : route === "delete-account" ? (
+        <main>
+          <DeleteAccount />
         </main>
       ) : (
         <main>
