@@ -7,7 +7,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const dist = join(dirname(fileURLToPath(import.meta.url)), "..", "dist");
-const routes = ["privacy", "terms", "delete-account"];
+const routes = ["privacy", "terms", "delete-account", "support"];
 
 for (const route of routes) {
   const dest = join(dist, route, "index.html");

@@ -10,8 +10,8 @@
     "build:ghpages": "tsc -b && vite build --mode ghpages && node scripts/emit-routes.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "npm run build && gh-pages -d dist",
-    "deploy:ghpages": "npm run build:ghpages && gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist --dotfiles",
+    "deploy:ghpages": "npm run build:ghpages && gh-pages -d dist --dotfiles"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.4",
