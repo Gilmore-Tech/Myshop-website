@@ -27,6 +27,7 @@ const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
 const PRIVACY_HREF = `${BASE}/privacy`;
 const TERMS_HREF = `${BASE}/terms`;
 const DELETE_ACCOUNT_HREF = `${BASE}/delete-account`;
+const SUPPORT_HREF = `${BASE}/support`;
 
 const COLUMNS: { title: string; links: Link[] }[] = [
   {
@@ -50,8 +51,8 @@ const COLUMNS: { title: string; links: Link[] }[] = [
   {
     title: "Support",
     links: [
-      { label: "Help Center", href: "#" },
-      { label: "Contact Us", href: "#" },
+      { label: "Help Center", href: SUPPORT_HREF },
+      { label: "Contact Us", href: SUPPORT_HREF },
       { label: "Privacy Policy", href: PRIVACY_HREF },
       { label: "Terms of Service", href: TERMS_HREF },
       { label: "Delete Account", href: DELETE_ACCOUNT_HREF },

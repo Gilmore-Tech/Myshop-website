@@ -2,12 +2,15 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
+
 const NAV = [
   { label: "How It Works", href: "#how-it-works" },
   { label: "For Providers", href: "#earn" },
   { label: "Services", href: "#features" },
   { label: "Safety", href: "#safety" },
   { label: "Download", href: "#download" },
+  { label: "Support", href: `${BASE}/support` },
   { label: "About", href: "#footer" },
 ];
 
@@ -45,20 +48,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
-          <a
-            href="#"
-            className="text-sm font-medium text-ink-700 hover:text-ink-900"
-          >
-            Sign In
-          </a>
-          <a
-            href="#waitlist"
-            className="inline-flex items-center justify-center rounded-xl bg-ink-900 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-ink-800 hover:shadow-md"
-          >
-            Join Waitlist
-          </a>
-        </div>
+       
 
         <button
           type="button"

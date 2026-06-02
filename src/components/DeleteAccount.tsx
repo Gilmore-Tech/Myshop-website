@@ -70,10 +70,10 @@ export function DeleteAccount() {
             <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-0.5" />
             Back to home
           </a>
-          <span className="mt-6 inline-flex items-center rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-700">
+          <span className="mt-6 inline-flex items-center rounded-full border border-brand-200 px-3 py-1 m-4 text-xs font-semibold uppercase tracking-wider text-brand-700">
             Account · Data Rights
           </span>
-          <h1 className="mt-4 text-4xl font-bold tracking-tight text-ink-900 sm:text-5xl lg:text-[3.25rem] lg:leading-[1.05]">
+          <h1 className="mt-4 text-4xl font-bold tracking-tight text-ink-500 sm:text-5xl lg:text-[3.25rem] lg:leading-[1.05]">
             Delete Your MyShop Account
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-700/75 sm:text-lg">
@@ -81,7 +81,7 @@ export function DeleteAccount() {
             to request deletion of your account and the data associated with it.
           </p>
           <dl className="mt-8 grid gap-4 sm:grid-cols-3">
-            <Meta label="Effective Date" value="April 14, 2026" />
+            <Meta label="Effective Date" value="July 1, 2026" />
             <Meta label="Company" value="Gilmore Technologies" />
             <Meta label="App" value="MyShop" />
           </dl>
@@ -119,7 +119,7 @@ export function DeleteAccount() {
                 </p>
                 <a
                   href="mailto:support@gilmoretechnologiesgh.com?subject=Delete%20my%20account"
-                  className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-brand-800 hover:text-brand-700"
+                  className="mt-2 inline-flex items-center gap-2 text-sm font-bold text-brand-800 hover:text-brand-700"
                 >
                   <Mail className="h-4 w-4" />
                   Email a deletion request
