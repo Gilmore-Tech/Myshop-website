@@ -2,16 +2,13 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 
-const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
-
 const NAV = [
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "For Providers", href: "#earn" },
-  { label: "Services", href: "#features" },
-  { label: "Safety", href: "#safety" },
-  { label: "Download", href: "#download" },
-  { label: "Support", href: `${BASE}/support` },
-  { label: "About", href: "#footer" },
+  { label: "Home", href: "#top" },
+  { label: "About Us", href: "#about" },
+  { label: "Our Brands", href: "#brands" },
+  { label: "Latest News", href: "#news" },
+  { label: "Careers", href: "#careers" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export function Header() {
@@ -27,10 +24,10 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
         scrolled
-          ? "border-b border-black/5 bg-white/80 backdrop-blur-lg"
-          : "bg-white/0"
+          ? "border-black/5 bg-white/85 shadow-sm backdrop-blur-lg"
+          : "border-black/5 bg-white/95 backdrop-blur"
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 lg:px-8">
@@ -46,9 +43,13 @@ export function Header() {
               {item.label}
             </a>
           ))}
+          <a
+            href="#contact"
+            className="ml-2 rounded-xl bg-ink-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-ink-800"
+          >
+            Get in Touch
+          </a>
         </nav>
-
-       
 
         <button
           type="button"
@@ -73,21 +74,13 @@ export function Header() {
                 {item.label}
               </a>
             ))}
-            <div className="mt-2 flex gap-2 border-t border-black/5 pt-3">
-              <a
-                href="#"
-                className="flex-1 rounded-xl border border-black/10 px-4 py-2.5 text-center text-sm font-semibold text-ink-800"
-              >
-                Sign In
-              </a>
-              <a
-                href="#waitlist"
-                onClick={() => setOpen(false)}
-                className="flex-1 rounded-xl bg-ink-900 px-4 py-2.5 text-center text-sm font-semibold text-white"
-              >
-                Join Waitlist
-              </a>
-            </div>
+            <a
+              href="#contact"
+              onClick={() => setOpen(false)}
+              className="mt-2 rounded-xl bg-ink-900 px-4 py-2.5 text-center text-sm font-semibold text-white"
+            >
+              Get in Touch
+            </a>
           </div>
         </div>
       )}

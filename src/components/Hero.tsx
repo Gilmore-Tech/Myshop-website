@@ -1,21 +1,25 @@
-import { ArrowRight, ShieldCheck, BadgeCheck, Wallet } from "lucide-react";
+import { ArrowRight, Cpu, Users, Building2 } from "lucide-react";
+import { COMPANY } from "../siteConfig";
 
 const TRUST = [
-  { icon: ShieldCheck, label: "Verified KYC" },
-  { icon: BadgeCheck, label: "Police Checked" },
-  { icon: Wallet, label: "Instant MoMo Payouts" },
+  { icon: Cpu, label: "World-class IT Solutions" },
+  { icon: Users, label: "Youth Digital Careers" },
+  { icon: Building2, label: "Community Economic Growth" },
 ];
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-ink-950 pt-32 pb-24 text-white sm:pt-40 sm:pb-32">
+    <section
+      id="top"
+      className="relative isolate overflow-hidden bg-ink-950 pt-32 pb-24 text-white sm:pt-40 sm:pb-32"
+    >
       {/* Background image */}
       <div
         aria-hidden
         className="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=2000&q=80')",
+            "url('https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=2000&q=80')",
         }}
       />
       {/* Dark overlay so text and gradients keep contrast */}
@@ -26,7 +30,7 @@ export function Hero() {
       {/* Decorative gradients */}
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(16,185,129,0.35),transparent_60%)]"
+        className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(245,166,35,0.35),transparent_60%)]"
       />
       <div
         aria-hidden
@@ -47,37 +51,37 @@ export function Hero() {
       />
 
       <div className="mx-auto max-w-5xl px-5 text-center lg:px-8">
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium tracking-wide text-white/80 backdrop-blur">
-          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand-400" />
-          Empowering Ghana's Workforce
-        </span>
+        {/* <span className="text-xs font-medium uppercase tracking-wider text-white/55">
+          Empowering Ghana's Youth Through Technology
+        </span> */}
 
         <h1 className="mt-6 text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-          Reliable Rides.{" "}
-          <span className="block bg-gradient-to-r from-brand-300 via-brand-400 to-emerald-300 bg-clip-text text-transparent">
-            Verified Artisans.
+          Building careers.{" "}
+          <span className="block bg-gradient-to-r from-brand-200 via-brand-400 to-brand-300 bg-clip-text text-transparent">
+            Growing communities.
           </span>
-          <span className="block">One Platform.</span>
+          <span className="block">Powered by technology.</span>
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg">
-          Ghana's first integrated ride-hailing and artisan marketplace —
-          purpose-built for safety, speed, and economic growth.
+          {COMPANY.name} delivers accessible, world-class IT services and
+          solutions while equipping young people with sustainable digital
+          careers and jobs.
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a
-            href="#waitlist"
+            href="#brands"
             className="group inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur transition-all hover:bg-white/10 sm:w-auto"
           >
-            Join as Provider
+            Explore Our Brands
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </a>
           <a
-            href="#features"
+            href="#careers"
             className="group inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-white px-6 py-3.5 text-sm font-semibold text-ink-900 shadow-lg shadow-brand-500/10 transition-all hover:bg-brand-50 hover:shadow-brand-500/20 sm:w-auto"
           >
-            Get a Ride
+            Join Our Team
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </a>
         </div>
@@ -99,10 +103,10 @@ export function Hero() {
       <div className="mx-auto mt-20 max-w-5xl px-5 lg:px-8">
         <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur sm:grid-cols-4">
           {[
-            { v: "2,500+", l: "Verified Pros" },
-            { v: "48", l: "Ghana Cities" },
-            { v: "4.9★", l: "Avg. Rating" },
-            { v: "<5min", l: "Match Time" },
+            { v: "2", l: "Brands & Growing" },
+            { v: "500+", l: "Youth Engaged" },
+            { v: "48", l: "Communities" },
+            { v: "100%", l: "Locally Built" },
           ].map((s) => (
             <div key={s.l} className="bg-ink-950/40 p-5 text-center">
               <div className="text-2xl font-bold tracking-tight text-white">

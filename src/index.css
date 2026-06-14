@@ -2,26 +2,34 @@
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --color-brand-50: #ecfdf5;
-  --color-brand-100: #d1fae5;
-  --color-brand-200: #a7f3d0;
-  --color-brand-300: #6ee7b7;
-  --color-brand-400: #34d399;
-  --color-brand-500: #10b981;
-  --color-brand-600: #059669;
-  --color-brand-700: #047857;
-  --color-brand-800: #065f46;
-  --color-brand-900: #064e3b;
-  --color-ink-950: #0a0e14;
-  --color-ink-900: #111827;
-  --color-ink-800: #1f2937;
-  --color-ink-700: #374151;
-  --color-gold-400: #fbbf24;
-  --color-gold-500: #f59e0b;
+
+  /* Brand orange — anchored on the logo's #F5A623 (brand-500). Primary accent. */
+  --color-brand-50: #fef6e9;
+  --color-brand-100: #fdeac8;
+  --color-brand-200: #fbd79a;
+  --color-brand-300: #f9c063;
+  --color-brand-400: #f7b03e;
+  --color-brand-500: #f5a623;
+  --color-brand-600: #e08f0e;
+  --color-brand-700: #b9730c;
+  --color-brand-800: #935b12;
+  --color-brand-900: #784b13;
+
+  /* Ink slate — anchored on the logo's #46535D (ink-700). Dark surfaces & text. */
+  --color-ink-950: #1e2429;
+  --color-ink-900: #2c343a;
+  --color-ink-800: #3a444c;
+  --color-ink-700: #46535d;
+
+  /* Secondary accent — repurposed to the logo slate so "gold-*" spots read as
+     the brand's second colour (e.g. Akwaaba vs orange MyShop). */
+  --color-gold-400: #5a6a75;
+  --color-gold-500: #46535d;
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4rem; /* keep anchored sections clear of the fixed header */
 }
 
 body {

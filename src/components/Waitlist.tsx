@@ -206,7 +206,7 @@ export function Waitlist() {
         .input::placeholder { color: rgb(17 24 39 / 0.4); }
         .input:focus {
           border-color: var(--color-brand-500);
-          box-shadow: 0 0 0 3px rgb(16 185 129 / 0.15);
+          box-shadow: 0 0 0 3px rgb(245 166 35 / 0.15);
         }
       `}</style>
     </section>

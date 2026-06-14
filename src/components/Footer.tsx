@@ -1,5 +1,6 @@
 import { MapPin, Mail, Phone } from "lucide-react";
 import { Logo } from "./Logo";
+import { COMPANY } from "../siteConfig";
 
 const Facebook = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
@@ -31,28 +32,28 @@ const SUPPORT_HREF = `${BASE}/support`;
 
 const COLUMNS: { title: string; links: Link[] }[] = [
   {
-    title: "Platform",
+    title: "Company",
     links: [
-      { label: "How It Works", href: "#how-it-works" },
-      { label: "Services", href: "#features" },
-      { label: "Safety", href: "#safety" },
-      { label: "Pricing", href: "#" },
+      { label: "About Us", href: "#about" },
+      { label: "Vision & Mission", href: "#vision" },
+      { label: "Latest News", href: "#news" },
+      { label: "Careers", href: "#careers" },
     ],
   },
   {
-    title: "Join Us",
+    title: "Our Brands",
     links: [
-      { label: "Become a Driver", href: "#earn" },
-      { label: "Become an Artisan", href: "#earn" },
-      { label: "Fleet Partners", href: "#" },
-      { label: "Careers", href: "#" },
+      { label: "MyShop — Artisans", href: "#brands" },
+      { label: "Akwaaba — Rides", href: "#brands" },
+      { label: "Download MyShop", href: "#download" },
+      { label: "Contact Us", href: "#contact" },
     ],
   },
   {
     title: "Support",
     links: [
       { label: "Help Center", href: SUPPORT_HREF },
-      { label: "Contact Us", href: SUPPORT_HREF },
+      { label: "Contact Us", href: "#contact" },
       { label: "Privacy Policy", href: PRIVACY_HREF },
       { label: "Terms of Service", href: TERMS_HREF },
       { label: "Delete Account", href: DELETE_ACCOUNT_HREF },
@@ -61,9 +62,9 @@ const COLUMNS: { title: string; links: Link[] }[] = [
 ];
 
 const META = [
-  { icon: MapPin, label: "Accra, Ghana" },
-  { icon: Mail, label: "support@gilmoretechnologiesgh.com" },
-  { icon: Phone, label: "+233 30 123 4567" },
+  { icon: MapPin, label: COMPANY.location },
+  { icon: Mail, label: COMPANY.email },
+  { icon: Phone, label: COMPANY.phone },
 ];
 
 export function Footer() {
@@ -82,8 +83,9 @@ export function Footer() {
           <div className="lg:col-span-4">
             <Logo />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink-700/70">
-              Ghana's leading multi-service platform. Connecting communities
-              through reliable transportation and expert artisan services.
+              A Ghanaian technology company unlocking the potential of the youth
+              — delivering world-class IT services and solutions, and building
+              brands like MyShop and Akwaaba.
             </p>
             <div className="mt-6 flex items-center gap-2">
               {[Facebook, Twitter, Instagram].map((Icon, i) => (
@@ -124,8 +126,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col items-start justify-between gap-6 border-t border-black/5 pt-6 sm:flex-row sm:items-center">
           <div className="text-xs text-ink-700/60">
-            © {new Date().getFullYear()} MyShop — Ride-Hailing & Artisan
-            Marketplace. All rights reserved.
+            © {new Date().getFullYear()} {COMPANY.name}. All rights reserved.
           </div>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-ink-700/70">
             {META.map(({ icon: Icon, label }) => (

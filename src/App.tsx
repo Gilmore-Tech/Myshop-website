@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
-import { Features } from "./components/Features";
-import { HowItWorks } from "./components/HowItWorks";
-import { EarnIncome } from "./components/EarnIncome";
-import { Safety } from "./components/Safety";
+import { VisionMission } from "./components/VisionMission";
+import { About } from "./components/About";
+import { Brands } from "./components/Brands";
+import { News } from "./components/News";
+import { Careers } from "./components/Careers";
 import { DownloadApp } from "./components/DownloadApp";
-import { Waitlist } from "./components/Waitlist";
-import { Newsletter } from "./components/Newsletter";
+import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { PrivacyPolicy } from "./components/PrivacyPolicy";
 import { TermsOfService } from "./components/TermsOfService";
@@ -59,13 +59,13 @@ function App() {
       ) : (
         <main>
           <Hero />
-          <Features />
-          <HowItWorks />
-          <EarnIncome />
-          <Safety />
+          <VisionMission />
+          <About />
+          <Brands />
+          <News />
+          <Careers />
           <DownloadApp />
-          <Waitlist />
-          <Newsletter />
+          <Contact />
         </main>
       )}
       <Footer />

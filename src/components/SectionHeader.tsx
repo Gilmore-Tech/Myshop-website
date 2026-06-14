@@ -17,7 +17,7 @@ export function SectionHeader({
       className={`max-w-2xl ${isCenter ? "mx-auto text-center" : "text-left"}`}
     >
       {eyebrow && (
-        <span className="inline-flex items-center rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-700">
+        <span className="text-xs font-semibold uppercase tracking-wider text-ink-700/55">
           {eyebrow}
         </span>
       )}

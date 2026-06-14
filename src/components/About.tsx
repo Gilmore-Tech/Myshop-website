@@ -25,13 +25,11 @@ const WHAT_WE_DO = [
   },
 ];
 
-// ─── Placeholder leadership — replace names, roles, and bios with real people ──
 const BOARD = [
-  { name: "Kwame Mensah", role: "Chairman, Board of Directors" },
-  { name: "Abena Owusu", role: "Non-Executive Director" },
-  { name: "Daniel Asante", role: "Non-Executive Director" },
+  { name: "Mr. Nana Kwadwo Bobie", role: "Board of Directors" },
 ];
 
+// ─── Placeholder management — replace names and roles with real people ────────
 const MANAGEMENT = [
   { name: "Nana Sarpong", role: "Chief Executive Officer" },
   { name: "Esi Boateng", role: "Chief Operating Officer" },
@@ -106,9 +104,11 @@ export function About() {
               Guiding our strategy and governance.
             </p>
           </div>
-          <div className="mx-auto mt-12 grid max-w-4xl gap-6 sm:grid-cols-3">
+          <div className="mx-auto mt-12 flex max-w-4xl flex-wrap justify-center gap-6">
             {BOARD.map((p) => (
-              <PersonCard key={p.name} {...p} />
+              <div key={p.name} className="w-full sm:w-72">
+                <PersonCard {...p} />
+              </div>
             ))}
           </div>
         </div>

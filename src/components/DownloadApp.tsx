@@ -1,5 +1,6 @@
 import { Star, Download } from "lucide-react";
 import logoUrl from "../assets/logo.png";
+import { MYSHOP_APPS, MYSHOP_SCREENSHOT_URL } from "../siteConfig";
 
 const AppleIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
@@ -32,14 +33,18 @@ function StoreBadge({
   icon: Icon,
   label,
   store,
+  href,
 }: {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   label: string;
   store: string;
+  href: string;
 }) {
+  const external = href !== "#";
   return (
     <a
-      href="#"
+      href={href}
+      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       className="group inline-flex items-center gap-3 rounded-2xl border border-white/15 bg-white/10 px-5 py-3 backdrop-blur transition-all hover:border-white/30 hover:bg-white/15"
     >
       <Icon className="h-7 w-7 text-white" />
@@ -62,7 +67,7 @@ export function DownloadApp() {
       {/* Decorative gradients */}
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_70%_50%_at_30%_20%,rgba(16,185,129,0.25),transparent_60%)]"
+        className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_70%_50%_at_30%_20%,rgba(245,166,35,0.25),transparent_60%)]"
       />
       <div
         aria-hidden
@@ -84,7 +89,7 @@ export function DownloadApp() {
 
             <h2 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl lg:leading-[1.1]">
               Take MyShop{" "}
-              <span className="bg-gradient-to-r from-brand-300 via-brand-400 to-emerald-300 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-brand-200 via-brand-400 to-brand-300 bg-clip-text text-transparent">
                 wherever you go.
               </span>
             </h2>
@@ -94,45 +99,49 @@ export function DownloadApp() {
               get paid instantly via MoMo — all from one beautifully simple app.
             </p>
 
-            {/* Store badges */}
-            <div className="mt-8 flex flex-wrap gap-3">
-              <StoreBadge
-                icon={AppleIcon}
-                label="Download on the"
-                store="App Store"
-              />
-              <StoreBadge
-                icon={PlayIcon}
-                label="Get it on"
-                store="Google Play"
-              />
+            {/* Store badges — one group per app (Customer / Provider) */}
+            <div className="mt-8 space-y-6">
+              {MYSHOP_APPS.map((app) => (
+                <div key={app.label}>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-sm font-semibold text-white">
+                      {app.label}
+                    </span>
+                    <span className="text-xs text-white/55">{app.tagline}</span>
+                  </div>
+                  <div className="mt-3 flex flex-wrap gap-3">
+                    <StoreBadge
+                      icon={AppleIcon}
+                      label="Download on the"
+                      store="App Store"
+                      href={app.appStoreUrl}
+                    />
+                    <StoreBadge
+                      icon={PlayIcon}
+                      label="Get it on"
+                      store="Google Play"
+                      href={app.playStoreUrl}
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
 
             {/* Ratings strip */}
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
               <div>
-                <div className="flex items-center gap-1">
-                  {[0, 1, 2, 3, 4].map((i) => (
-                    <Star
-                      key={i}
-                      className="h-4 w-4 fill-gold-400 text-gold-400"
-                    />
-                  ))}
-                  <span className="ml-1 text-sm font-semibold">4.9</span>
-                </div>
-                <div className="mt-1 text-xs text-white/55">
-                  12K+ App Store reviews
-                </div>
+                <div className="text-lg font-bold">20+</div>
+                <div className="text-xs text-white/55">Play Store downloads</div>
               </div>
               <div className="hidden h-10 w-px bg-white/10 sm:block" />
               <div>
-                <div className="text-lg font-bold">100K+</div>
-                <div className="text-xs text-white/55">Play Store installs</div>
+                <div className="text-lg font-bold">iOS &amp; Android</div>
+                <div className="text-xs text-white/55">Available on both stores</div>
               </div>
               <div className="hidden h-10 w-px bg-white/10 sm:block" />
               <div>
-                <div className="text-lg font-bold">&lt; 30 MB</div>
-                <div className="text-xs text-white/55">Lightweight install</div>
+                <div className="text-lg font-bold">Just launched</div>
+                <div className="text-xs text-white/55">New &amp; growing fast</div>
               </div>
             </div>
           </div>
@@ -149,6 +158,14 @@ export function DownloadApp() {
               <div className="rounded-[2.5rem] border border-white/10 bg-ink-900 p-2.5 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]">
                 {/* Inner screen */}
                 <div className="relative aspect-[9/19] overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-50 via-white to-zinc-50">
+                  {MYSHOP_SCREENSHOT_URL ? (
+                    <img
+                      src={MYSHOP_SCREENSHOT_URL}
+                      alt="MyShop app screenshot"
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
+                  ) : (
+                  <>
                   {/* Notch */}
                   <div className="absolute left-1/2 top-3 z-10 flex h-5 w-24 -translate-x-1/2 items-center justify-center rounded-full bg-ink-900">
                     <div className="h-1.5 w-1.5 rounded-full bg-ink-700" />
@@ -197,7 +214,7 @@ export function DownloadApp() {
                     </div>
 
                     {/* Map preview */}
-                    <div className="relative mt-4 h-28 overflow-hidden rounded-xl bg-gradient-to-br from-emerald-100 via-emerald-50 to-amber-50">
+                    <div className="relative mt-4 h-28 overflow-hidden rounded-xl bg-gradient-to-br from-brand-100 via-brand-50 to-amber-50">
                       <svg
                         viewBox="0 0 200 120"
                         className="absolute inset-0 h-full w-full"
@@ -205,25 +222,25 @@ export function DownloadApp() {
                       >
                         <path
                           d="M0 80 Q 50 40, 100 70 T 200 50"
-                          stroke="#10b981"
+                          stroke="#f5a623"
                           strokeWidth="2.5"
                           fill="none"
                           strokeLinecap="round"
                         />
                         <path
                           d="M0 80 Q 50 40, 100 70 T 200 50"
-                          stroke="#10b981"
+                          stroke="#f5a623"
                           strokeWidth="6"
                           fill="none"
                           strokeLinecap="round"
                           opacity="0.2"
                         />
-                        <circle cx="20" cy="78" r="4" fill="#0a0e14" />
+                        <circle cx="20" cy="78" r="4" fill="#1e2429" />
                         <circle
                           cx="180"
                           cy="52"
                           r="5"
-                          fill="#10b981"
+                          fill="#f5a623"
                           stroke="white"
                           strokeWidth="2"
                         />
@@ -277,6 +294,8 @@ export function DownloadApp() {
                       ))}
                     </div>
                   </div>
+                  </>
+                  )}
                 </div>
               </div>
 

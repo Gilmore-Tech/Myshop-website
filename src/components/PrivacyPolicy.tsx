@@ -102,7 +102,7 @@ export function PrivacyPolicy() {
             <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-0.5" />
             Back to home
           </a>
-          <span className="mt-6 inline-flex items-center rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-700">
+          <span className="mt-6 text-xs font-semibold uppercase tracking-wider text-ink-700/55">
             Legal · Version 1.0.0
           </span>
           <h1 className="mt-4 text-4xl font-bold tracking-tight text-ink-900 sm:text-5xl lg:text-[3.25rem] lg:leading-[1.05]">
